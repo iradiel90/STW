@@ -33,6 +33,11 @@ get '/throw/:type' do
   end
 end
 
+post '/throw' do
+	@params = params[:eleccion]
+	redirect "/throw/#{@params}"
+end
+
 
 __END__
 
