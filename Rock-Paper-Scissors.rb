@@ -23,14 +23,15 @@ get '/throw/:type' do
 
   if @player_throw == @computer_throw 
     @answer = "There is a tie"
-    erb :index
+	 @img= "tie"
   elsif @player_throw == @defeat[@computer_throw]
-    @answer = "Computer wins; #{@computer_throw} defeats #{@player_throw}"
-    erb :index
+    @answer = "Sorry. #{@computer_throw} beats #{@player_throw}"
+	 @img= "sorry"
   else
     @answer = "Well done. #{@player_throw} beats #{@computer_throw}"
-    erb :index
+	 @img= "congrats"
   end
+  erb :result
 end
 
 post '/throw' do
@@ -38,17 +39,3 @@ post '/throw' do
 	redirect "/throw/#{@params}"
 end
 
-
-__END__
-
-@@index
-<html>
-  <head>
-    <title>Rock Paper Scissors</title>
-  </head>
-  <body>
-    <h2> Computer chooses:  <%= @computer_throw %> </h2>
-    <h2> You choose: <%= @player_throw %> </h2>
-    <h1> <%= @answer %> </h1>
-  </body>
-</html>

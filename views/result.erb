@@ -1,0 +1,14 @@
+<center>
+	<img src="/img/<%= @computer_throw %>.jpg"  WIDTH=140 HEIGHT=240 alt="<%= @computer_throw %>" />
+	<img src="/img/versus.png"  WIDTH=100 HEIGHT=200 alt="versus" />
+	<img src="/img/<%= @player_throw %>.jpg"  WIDTH=140 HEIGHT=240 alt="<%= @player_throw %>" />
+	<br>
+	<h1> Computer chooses:  <%= @computer_throw %>.     You choose: <%= @player_throw %>. </h1>
+	<br>
+	<img src="/img/<%= @img %>.jpg"  WIDTH=280 HEIGHT=200 alt="<%= @img %>" />
+	<h1> <%= @answer %> </h1>
+	<br>
+	<form name="input" action="/" method="get">
+		<input type="submit" value="PLAY AGAIN"/>
+	</form>
+</center>
