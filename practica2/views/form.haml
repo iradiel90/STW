@@ -9,10 +9,10 @@
       %img{:HEIGHT => "240", :WIDTH => "140", :alt => "SCISSORS", :src => "/img/scissors.jpg"}/
       %input{:name => "eleccion", :type => "radio", :value => "scissors"}/
       %br
-        %br
-          %input{:type => "submit", :value => "PLAY"}/
+      %br
+      %input{:type => "submit", :value => "PLAY"}/
   %form{:action => "/", :method => "get", :name => "input2"}
     %input{:type => "submit", :value => "RESET"}/
   %br
-    %br
-      %h1 Wins: #{@wins}    Ties:  #{@ties}    Losses: #{@losses}
+  %br
+  %h1 Wins: #{@wins}    Ties:  #{@ties}    Losses: #{@losses}
