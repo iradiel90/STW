@@ -1,0 +1,19 @@
+%center
+  %form{:action => "/throw", :method => "post", :name => "input"}
+    %h1 Choose one option:
+    %br
+      %img{:HEIGHT => "240", :WIDTH => "140", :alt => "ROCK", :src => "/img/rock.jpg"}/
+      %input{:name => "eleccion", :type => "radio", :value => "rock"}/
+      %img{:HEIGHT => "240", :WIDTH => "140", :alt => "PAPER", :src => "/img/paper.jpg"}/
+      %input{:name => "eleccion", :type => "radio", :value => "paper"}/
+      %img{:HEIGHT => "240", :WIDTH => "140", :alt => "SCISSORS", :src => "/img/scissors.jpg"}/
+      %input{:name => "eleccion", :type => "radio", :value => "scissors"}/
+      %br
+        %br
+          %input{:type => "submit", :value => "PLAY"}/
+  %form{:action => "/", :method => "get", :name => "input2"}
+    %input{:type => "submit", :value => "RESET"}/
+  %br
+    %br
+      %h1
+        Wins: #{@wins}    Ties:  #{@ties}    Losses: #{@losses}

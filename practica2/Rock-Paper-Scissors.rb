@@ -1,5 +1,6 @@
+require 'rubygems'
 require 'sinatra'
-require 'erb'
+require 'haml'
 
 enable :sessions
 
@@ -18,14 +19,16 @@ get '/' do
 	@wins = session['wins']
 	@ties = session['ties']
 	@losses = session['losses']
-	erb :form
+	haml :form
 end
 
+
+#Mientras no se redireccione a '/', el servidor mantendrá guardados el valor de las variables del contador
 get '/home' do
   @wins = session['wins']
   @ties = session['ties']
   @losses = session['losses']
-  erb :form
+  haml :form
 end
 
 get '/throw/:type' do
@@ -49,7 +52,7 @@ get '/throw/:type' do
 	 @img= "congrats"
 	 session['wins'] += 1
   end
-  erb :result
+  haml :result
 end
 
 post '/throw' do

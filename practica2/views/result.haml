@@ -1,0 +1,14 @@
+%center
+  %img{:HEIGHT => "240", :WIDTH => "140", :alt => @computer_throw, :src => "/img/#{@computer_throw}.jpg"}/
+  %img{:HEIGHT => "200", :WIDTH => "100", :alt => "versus", :src => "/img/versus.png"}/
+  %img{:HEIGHT => "240", :WIDTH => "140", :alt => @player_throw, :src => "/img/#{@player_throw}.jpg"}/
+  %br
+    %h1
+      Computer chooses:  #{@computer_throw}.     You choose: #{@player_throw}.
+    %br
+      %img{:HEIGHT => "200", :WIDTH => "280", :alt => @img, :src => "/img/#{@img}.jpg"}/
+      %h1
+        = @answer
+      %br
+        %form{:action => "/home", :method => "get", :name => "input"}
+          %input{:type => "submit", :value => "PLAY AGAIN"}/
