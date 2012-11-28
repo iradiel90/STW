@@ -1,0 +1,4 @@
+%h Shortened Urls Table:
+%ul
+	- @urls.each do |url|
+		%li localhost:4567/#{url.id} || Custom: #{url.custom_url} ---> #{url.url}

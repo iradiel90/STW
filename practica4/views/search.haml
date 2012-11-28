@@ -1,0 +1,8 @@
+%h Url found:
+%ul
+	- if @searched_id.present?
+		%li localhost:4567/#{@searched_id.id} || Custom: #{@searched_id.custom_url} ---> #{@searched_id.url}
+	- elsif @searched_url.present?
+		%li localhost:4567/#{@searched_url.id} || Custom: #{@searched_url.custom_url} ---> #{@searched_url.url}
+	- else
+		%li No se encontraron resultados.

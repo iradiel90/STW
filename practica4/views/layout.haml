@@ -1,0 +1,16 @@
+!!!
+%html
+	%body
+		=yield
+		%form(action="/" method="POST")
+			%label(for="url") URL
+			%input(type="text" name="url" id="url" accesskey="s")
+			%br
+			%label(for="custom") Custom Shortened URL(optional)
+			%input(type="text" name="custom" id="custom" accesskey="t")
+			%input(type="submit" value="Shorten" class="btn btn-primary")
+		%form(action="/search" method="POST")
+			%input(type="text" name="search" id="search")
+			%input(type="submit" value="Search")
+		%form(action="/show" method="GET")
+			%input(type="submit" value="Show")
