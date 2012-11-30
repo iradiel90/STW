@@ -2,3 +2,8 @@
 %ul
 	- @urls.each do |url|
 		%li localhost:4567/#{url.id} || Custom: #{url.custom_url} ---> #{url.url}
+
+%h Shortened Urls Visits:
+%ul
+	- @visits.each do |visit|
+		%li localhost:4567/#{visit.url_id} ---> #{visit.country}: #{visit.count} visits
