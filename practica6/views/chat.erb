@@ -1,0 +1,45 @@
+<div class="span3">
+	<div id="users" class="well sidebar-nav">
+	</div>
+</div><!--/span-->
+<div class="span9">
+	<div id="chat" class="hero-unit" style="overflow: auto; height: 300px;">
+	</div>
+	<div class="row-fluid">
+		<form>
+			<input id='msg' placeholder='type message here...' />
+	    	</form>
+	</div><!--/row-->
+</div><!--/span-->
+
+<script>
+
+	// reading
+	var es = new EventSource('/stream/<%= user %>');
+	es.onmessage = function(e) {
+		info = eval(e.data);
+		if (info[2] == 'g'){
+			$('#chat').append('<p1>' + info[0] + '</p1><br>');
+		}
+		else {
+			$('#chat').append('<p2>' + info[0] + '</p2><br>');
+		};
+		list(info[1]);
+	};
+	var el = document.getElementById("chat");
+	el.scrollTop = el.scrollHeight;
+
+	// writing
+	$("form").live("submit", function(e) {
+		$.post('/', {msg: "<%= user %>: " + $('#msg').val()});
+		$('#msg').val(''); $('#msg').focus();
+		e.preventDefault();
+	});
+
+	function list (users) {
+		$('#users').empty();
+	    	for (var i=0; i < users.length; i++)
+	      		$('#users').append('<li>'+ users[i] +'</li>');
+	}
+
+</script>
